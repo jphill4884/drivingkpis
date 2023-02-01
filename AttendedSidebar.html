@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <base target="_top">
+  <style>
+  .sliderticks {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex: row;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  td, th {
+  text-align: center;
+  width: 25%;
+}
+</style>
+</head>
+
+<body>
+  <form class="container">
+    <h3>Attended Driving KPI</h3>
+    <hr>
+    <div>Rubric:</div>
+    <div>1 - Seldom/Never</div>
+    <div>2 - Sometimes</div>
+    <div>3 - Frequently</div>
+    <div>4 - Always</div>
+    <hr>
+    <label for="question1">Offers OTS in every qualified opportunity</label>
+    <input style="width: 100%" type="range" id="question1" name="question1" min="1" max="4" step="1" value="1"/>
+    <div class="sliderticks">
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+  </div>
+    <br /><hr>
+    <label for="question2">Ties value to Closing (OTS/Booking)</label>
+    <input style="width: 100%" type="range" id="question2" name="question2" min="1" max="4" step="1" value="1"/>
+    <div class="sliderticks">
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    </div>
+    <br><hr>
+    <label for="question3">Ends call reminding Pro of value we want to share</label>
+    <input style="width: 100%" type="range" id="question3" name="question3" min="1" max="4" step="1" value="1"/>
+    <div class="sliderticks">
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    </div>
+    <br><hr>
+    <label for="question4">Confirms all necessary info (20 min, Service calls, # of employees etc.)</label>
+    <input style="width: 100%" type="range" id="question4" name="question4" min="1" max="4" step="1" value="1"/>
+    <div class="sliderticks">
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    </div>
+    <br><hr>
+    <label for="question5">Follows confirmation process (calling day before / morning of demo)</label>
+    <input style="width: 100%" type="range" id="question5" name="question5" min="1" max="4" step="1" value="1"/>
+    <div class="sliderticks">
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    </div>
+    <br><hr>
+    <label for="question6">When applicable, offer OTS during confirmation call</label>
+    <input style="width: 100%" type="range" id="question6" name="question6" min="1" max="4" step="1" value="1"/>
+    <div class="sliderticks">
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    </div>
+    <br><hr>
+    <label for="question7">Calls missed demos at appropriate cadence</label>
+    <input style="width: 100%" type="range" id="question7" name="question7" min="1" max="4" step="1" value="1"/>
+    <div class="sliderticks">
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    </div>
+    <br><hr>
+    <input type="button" class="btn btn-primary btn-md btn-block" class="rounded" value="Submit" onclick="submit()" />
+  </form>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script>
+    function launchAttendedSidebar(){
+      google.script.run.showAttendedSidebar();
+    }    
+  </script>
+  <script>
+    function openInvoice(){
+      google.script.run.viewInvoices();
+    }
+  </script>
+  <script>
+    function refreshData(){
+      google.script.run.refreshCustomerData();
+    }
+  </script>
+  <script>
+    function createPDF(){
+      google.script.run.routeProcess();
+    }
+  </script>
+  <script>
+    function resetValues(){
+      google.script.run.resetSheet();
+    }
+  </script>
+  <script>
+    function cancellationNote(){
+      google.script.run.cancelInvoice();
+    }
+  </script>
+  <script>
+    function adminPanel(){
+      google.script.run.openAdminPanel();
+    }
+  </script>
+</body>
+
+</html>
