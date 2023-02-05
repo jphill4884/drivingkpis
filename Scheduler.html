@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+
+  .scheduler {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width:100%;
+    }
+
+</style>
+  </head>
+  <body>
+    <form class="scheduler">
+      <label>Select Date</label>
+      <input type="date" id="date" name="date" />
+      <br>
+      <label>Select Time</label>
+      <input type="time" id="time" name="time" />
+      <br>
+      <input type="button" value="Schedule" onclick="schedule()" />
+    </form>
+
+  <script>
+  
+  function schedule(){
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    
+    google.script.run
+    .withSuccessHandler(google.script.host.close)
+    .createCalendarEvent(date, time);
+
+  };
+
+  </script>
+
+  </body>
+</html>

@@ -36,6 +36,7 @@ function savePDF(optSSId, optSheetId) {
       GmailApp.sendEmail(deliveryAddress, emailSubject, '', { htmlBody: emailText, attachments: [blob.getAs(MimeType.PDF)] });
       saveData();
       }
+      scheduleNextCheckIn();
     } else if (result == ui.Button.NO) {
       ui.alert('The results of this check-in have not been saved to the ACE Tracker. Please make any necessary changes and send again.');
     } else if (result == ui.Button.CANCEL) {

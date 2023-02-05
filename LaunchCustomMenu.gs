@@ -4,7 +4,8 @@ function openCustomMenu() {
       .addItem('Get Coaching Calls', 'getFreshCalls')
       .addItem('Get First Calls', 'getFirstCalls'))
     .addSubMenu(ui.createMenu('Send')
-      .addItem('Send Scorecard', 'savePDF'))
+      .addItem('Send Scorecard', 'savePDF')
+      .addItem('Schedule Follow Up (beta)', 'scheduleNextCheckIn'))
     .addSubMenu(ui.createMenu('Admin Functions')
       .addItem('Create a Copy','copyTemplate'))
       .addToUi();
