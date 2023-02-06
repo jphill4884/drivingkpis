@@ -38,8 +38,8 @@ function getLongCalls(){
   const longCallsArray = [];
   for ( let i = 0; i < linksArray.length; i++) {
     const sdrName = linksArray[i][0];
-    const callDate = linksArray[i][1]
-    const recordingUrl = linksArray[i][2];
+    const callDate = linksArray[i][2]
+    const recordingUrl = linksArray[i][1];
     const talkTimeSec = linksArray[i][3];
     const leadId = linksArray[i][4];
     const note = `Talktime: ${talkTimeSec} seconds`
