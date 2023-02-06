@@ -1,7 +1,7 @@
 function copyTemplate() {
   const active = SpreadsheetApp.getActive();
   const sdrName = tab.getRange(2, 2, 1, 1).getValue();
-  const mgrName = tab.getRange(2, 3, 1, 1).getValue();
+  const mgrName = tab.getRange(3, 2, 1, 1).getValue();
   const filename = (sdrName + "- Driving KPIs");
   const destfolder = DriveApp.getFolderById('1ooZcSn3cCbLeiExZ0GE2IxoTSmurcwD_');
   const newdoc = DriveApp.getFileById(active.getId()).makeCopy(filename, destfolder)
@@ -10,17 +10,17 @@ function copyTemplate() {
   const url = "https://docs.google.com/spreadsheets/d/" + newdocid;
   const openNew = "<script>window.open('" + url + "');google.script.host.close();</script>";
   const userInterface = HtmlService.createHtmlOutput(openNew);
-  ui.showModalDialog(userInterface, "Opening New Driving KPIs Template");
-  console.log(`First stamp ${new Date}`)
-  Utilities.sleep(120000);
-  console.log(`Second stamp ${new Date}`)
-  prepNewSheet(newdocid);
   const saveLocation = masterList.getRange(masterList.getLastRow() + 1, 1, 1, 5);
   const locationData = [[[currentDate],[mgrName],[sdrName],[newdocid],[url]]]
   saveLocation.setValues(locationData);
+  ui.showModalDialog(userInterface, "Opening New Driving KPIs Template");
+  prepNewSheet(newdocid);
 }
 
 function prepNewSheet(docId) {
+  console.log(`First stamp ${new Date}`)
+  Utilities.sleep(120000);
+  console.log(`Second stamp ${new Date}`)
   const newSheet = SpreadsheetApp.openById(docId);
   const newTab = newSheet.getSheetByName('DRAFT SAMPLE');
   ScriptApp.newTrigger('openCustomMenu')
