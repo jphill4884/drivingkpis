@@ -42,4 +42,6 @@ function savePDF(optSSId, optSheetId) {
     } else if (result == ui.Button.CANCEL) {
       ui.alert('This process has been cancelled, the results of this check-in have not been saved to the ACE Tracker.');
     }
+    hardCodeRow();
+    saveData();
 }
